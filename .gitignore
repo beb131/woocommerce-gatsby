@@ -28,3 +28,5 @@ wp-data/
 config/
 
 node_modules
+
+backend-copy/
