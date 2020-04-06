@@ -1,0 +1,31 @@
+.hero {
+  min-height: 50vh !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 50, 0.6)), url("/images/hp-hero.jpg");
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+}
+.hero .title {
+  color: #ddd;
+  font-size: 5em;
+}
+.hero .subtitle {
+  color: #ddd;
+  font-size: 2em;
+}
+.hero .hero-head {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+.hero .hero-head a.navbar-item {
+  color: #fff;
+  transition: 0.5s;
+}
+.hero .hero-head a.navbar-item:hover, .hero .hero-head a.navbar-item:active, .hero .hero-head a.navbar-item:focus {
+  color: black !important;
+}
+.hero .hero-foot a {
+  display: none;
+}

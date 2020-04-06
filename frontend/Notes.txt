@@ -1,0 +1,13 @@
+Notes
+
+JWT Auth already handled in pages/index
+Use login state to pass down to ATCButton
+
+ATC is returning correct WC product info but not adding to cart due to auth possibly
+
+Login is returning user info but /wp-json/wp/v2/users/me is 401ing even with active token
+
+Checkout needs to be handled by creating a payment endpoint. 
+
+https://testwoo.com/beb131/wp-admin/edit.php?post_type=product&page=product_importer
+CSV import not working???

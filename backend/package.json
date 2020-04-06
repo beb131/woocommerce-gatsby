@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "private": true,
+  "description": "WordPress Docker",
+  "version": "0.2.0",
+  "keywords": [
+    "WordPress"
+  ],
+  "scripts": {
+    "start": "docker-compose up",
+    "docker-build": "docker-compose up -d --build"
+  }
+}
