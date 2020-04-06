@@ -1,24 +1,24 @@
-#Headless Wordpress Marketplace with Gatsby
-##_Demo Marketplace for Hotels at Home_
+# Headless Wordpress Marketplace with Gatsby
+## _Demo Marketplace for Hotels at Home_
 
-###Initial Setup
+### Initial Setup
 Env Variables are in `/backend/sample.env` and are referenced in `/backend/docker-compose.yml`
 
 - Rename `sample.env` to `.env`
 - Sample creds will work
-- Install [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable) and [Docker](https://docs.docker.com/install/)
+- Install [Yarn](https://classic.yarnpkg.com/en/docs/install/# mac-stable) and [Docker](https://docs.docker.com/install/)
 - In project root, run `yarn`
 
-#####_Retrieve demo data from 01 Test DB_
+##### _Retrieve demo data from 01 Test DB_
 - Open `/backend/wp-data/data-query.sql`
 - Run query on HAHAPP
 - Export as CSV
 
-###Start the Wordpress Backend
+### Start the Wordpress Backend
 - In project root, run `yarn workspace backend start`
 - Access backend at [http://localhost:3030/wp-admin](http://localhost:3030/wp-admin)
 
-#####_Initial WP setup_
+##### _Initial WP setup_
 - Run through WP Install process
 - Go to Settings -> Permalinks in sidebar
 - Under Common Settings select Post Name and save settings
@@ -46,11 +46,11 @@ _Add products to store_
 - Click "Import" button at the top of the page
 - Import the demo data csv, confirm column names to match product info.
 
-###Start the Gatsby Frontend
+### Start the Gatsby Frontend
 - In project root, run `yarn workspace frontend start`
 - Access frontend at [http://localhost:8000/](http://localhost:8000/)
 
-##Current Issues to be Resolved
+## Current Issues to be Resolved
 
 - `<ATCButton>` component axios POST request returning 500 error
 - `<Cart>` axios GET request is returning empty array
@@ -58,21 +58,21 @@ _Add products to store_
 - `<ATCButton>` not receiving token from `<AuthContext>` created in `<AuthWrapper>` component
     - Currently have a `<ATCButton>` instance as a child of `<Auth>` in the header to test the token as direct props
 
-##Plugin reference
-###Cocart (Currently using free version)
+## Plugin reference
+### Cocart (Currently using free version)
 _Extends WooCommerce API to access Cart info_
 
-[Cocart Documentation](https://docs.cocart.xyz/index.html#introduction)
+[Cocart Documentation](https://docs.cocart.xyz/index.html# introduction)
 
-###WooCommerce Subscription plugin
+### WooCommerce Subscription plugin
 [Official Plugin Page](https://woocommerce.com/products/woocommerce-subscriptions/)
 
 No free trial, but the plugin page explains all features
 
-###WooCommerce Vendor Plugin
+### WooCommerce Vendor Plugin
 [Official Plugin Page](https://woocommerce.com/products/product-vendors/)
 
-#####_Create a Trial Site_
+##### _Create a Trial Site_
 
 - Click the button below the Add To Cart button "Want to test this plugin?"
 - With a Wordpress.com account, login to Woocommerce.com
@@ -80,12 +80,12 @@ No free trial, but the plugin page explains all features
 - Go to Plugins in the sidebar
 - Activate Woocommerce Product Vendors and WooCommerce Product CSV Import Suite
 
-#####_Import Demo Data_
+##### _Import Demo Data_
 
 - Go to Woocommerce -> CSV Import Suite in the sidebar
 - Click Import Products and upload demo data csv
 
-#####_Create a Paypal Sandbox Account_
+##### _Create a Paypal Sandbox Account_
 - Go to [https://developer.paypal.com/developer/accounts](https://developer.paypal.com/developer/accounts)
 - Create an account
 - Go to `/wp-admin/admin.php?page=wc-settings&tab=checkout&section=paypal` on the test site
@@ -96,7 +96,7 @@ No free trial, but the plugin page explains all features
 - Click View/Edit account
 - Use the Email ID and System Generated Password whenever logging into Paypal at Checkout 
 
-#####_Create Vendors_
+##### _Create Vendors_
 - In Wordpress go to Products -> Vendors in the sidebar
 - Add a name of a vendor and slug
 - Click Additional Settings
@@ -105,7 +105,7 @@ No free trial, but the plugin page explains all features
 - Repeat with multiple vendors, use either the same or different emails for each
 - Go to Products in the sidebar and edit some products to have different vendors
 
-#####_Test Checkout_
+##### _Test Checkout_
 - Go to `/shop` and add products to the cart that have different vendors
 - Checkout with Paypal sandbox account and look for confirmation emails
 
