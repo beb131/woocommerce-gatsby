@@ -24,7 +24,6 @@ yarn-error.log
 
 #Wordpress files
 wordpress/
-wp-data/
 config/
 
 node_modules
