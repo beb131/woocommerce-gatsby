@@ -3,12 +3,12 @@ import Login from "../Login/index";
 import Dashboard from "../Dashboard/index";
 import ATCButton from "../ATCButton";
 
-const Auth = props => {
+const Auth = (props) => {
   const {
-    login: [login, setLogin]
+    login: [login, setLogin],
   } = {
     login: useState(""),
-    ...(props.state || {})
+    ...(props.state || {}),
   };
 
   const siteURL = "http://localhost:3030";

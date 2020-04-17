@@ -16,7 +16,7 @@ const Products = props => {
             <Link to={slug}>
               <div className="card-image">
                 <figure className="image is-4by3">
-                  <img src={images[0].src} alt="Placeholder" />
+                  {/* <img src={images[0].src} alt="Placeholder" /> */}
                 </figure>
               </div>
             </Link>

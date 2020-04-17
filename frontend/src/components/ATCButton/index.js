@@ -3,29 +3,28 @@ import axios from "axios";
 // import Cart from "../Cart/index";
 import AuthContext from "../AuthWrapper/index";
 
-const ATCButton = props => {
+const ATCButton = (props) => {
   //   console.log("Context: ", useContext(AuthContext));
   //   const token = useContext(AuthContext);
   console.log("ATC Token:", props.token);
-  const handleATC = e => {
+  const handleATC = (e) => {
     e.preventDefault();
     axios
       .post(
         "http://localhost:3030/wp-json/cocart/v1/add-item",
         {
           product_id: props.product_id,
-          quantity: 1
-        },
-        {
-          headers: {
-            Authorization: "Bearer " + props.token
-            // Accept: "application/json",
-            // "Content-Type": "application/json",
-            // "User-Agent": "CoCart API/v1"
-          }
+          quantity: 1,
         }
+        // {
+        //   headers: {
+        //     Authorization: "Bearer " + props.token,
+        //     "Content-Type": "application/json"
+        //     // "User-Agent": "CoCart API/v1"
+        //   }
+        // }
       )
-      .then(res => {
+      .then((res) => {
         console.log("Posted");
         console.log("ATCButton res:", res);
       })

@@ -10,21 +10,21 @@ export default class Cart extends Component {
     super(props);
 
     this.state = {
-      cart: []
+      cart: [],
     };
   }
 
   componentDidMount() {
     axios
       .get("http://localhost:3030/wp-json/cocart/v1/get-cart", {
-        headers: {
-          Authorization: "Bearer " + this.props.token
-        }
+        // headers: {
+        //   Authorization: "Bearer " + this.props.token,
+        // },
       })
-      .then(res => {
+      .then((res) => {
         console.log("Cart res:", res);
         this.setState(() => ({
-          cart: res.data
+          cart: res.data,
         }));
       })
       .catch(function(error) {
@@ -49,7 +49,7 @@ export default class Cart extends Component {
             Your cart is empty, shop <Link to="/">here</Link>
           </h2>
         )} */}
-        {CartItems}
+        <CartItems />
         {/* {subtotal > 0 && (
           <>
             <div id="subtotal_container">

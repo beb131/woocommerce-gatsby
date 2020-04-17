@@ -28,9 +28,6 @@ export const pageQuery = graphql`
           price
           short_description
           description
-          images {
-            src
-          }
         }
       }
     }

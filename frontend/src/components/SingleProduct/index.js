@@ -11,14 +11,14 @@ const SingleProduct = props => {
     price,
     short_description,
     description,
-    images,
+    // images,
     wordpress_id
   } = props.product;
 
   return (
     <div id="single_product">
       <div id="product_info">
-        <img src={images[0].src} alt="Placeholder" />
+        {/* <img src={images[0].src} alt="Placeholder" /> */}
         <div id="description">{description}</div>
         <div id="item_details">{ReactHtmlParser(short_description)}</div>
       </div>

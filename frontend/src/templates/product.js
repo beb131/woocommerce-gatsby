@@ -31,9 +31,6 @@ export const productQuery = graphql`
       price
       short_description
       description
-      images {
-        src
-      }
       wordpress_id
     }
   }
