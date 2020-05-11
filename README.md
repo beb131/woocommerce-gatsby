@@ -9,11 +9,6 @@ Env Variables are in `/backend/sample.env` and are referenced in `/backend/docke
 - Install [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable) and [Docker](https://docs.docker.com/install/)
 - In project root, run `yarn`
 
-##### _Retrieve demo data from 01 Test DB_
-- Open `/backend/wp-data/data-query.sql`
-- Run query on HAHAPP
-- Export as CSV
-
 ### Start the Wordpress Backend
 - In project root, run `yarn workspace backend start`
 - Access backend at [http://localhost:3030/wp-admin](http://localhost:3030/wp-admin)
@@ -40,11 +35,11 @@ _Add JWT Key_
 - Open `/backend/wordpress/wp-config.php`
 - Add `define('JWT_AUTH_SECRET_KEY', '[YOUR_JWT_SECRET]');` and replace YOUR\_JWT\_SECRET with any string to be used as an Auth Key
 
-_Add products to store_
+_Add sample products to store_
 
 - Click the Products tab in the sidebar
 - Click "Import" button at the top of the page
-- Import the demo data csv, confirm column names to match product info.
+- Import the csv `/sample-products.csv`, confirm column names to match product info.
 
 ### Start the Gatsby Frontend
 - In project root, run `yarn workspace frontend start`
