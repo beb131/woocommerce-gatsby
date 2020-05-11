@@ -4,10 +4,10 @@ Plugin URI: https://cocart.xyz
 Contributors: sebd86, cocartforwc
 Tags: woocommerce, cart, rest, rest-api, JSON
 Donate link: https://opencollective.com/cocart
-Requires at least: 4.9
-Requires PHP: 5.6
+Requires at least: 5.0
+Requires PHP: 7.0
 Tested up to: 5.4
-Stable tag: 2.0.12
+Stable tag: 2.0.13
 WC requires at least: 3.6.0
 WC tested up to: 4.0.1
 License: GPLv3
@@ -33,7 +33,7 @@ With [the documentation](https://docs.cocart.xyz/) provided, you’ll learn how 
 
 CoCart provides the basic features to get you started.
 
-* Add simple and variable products to the cart.
+* Add simple and variable products to the cart (including simple and variable subscription products).
 * Update items in the cart.
 * Remove items from the cart.
 * Restore items to the cart.
@@ -186,6 +186,14 @@ If you get stuck, you can ask for help in the [CoCart support forum](https://wor
 
 == Changelog ==
 
+= v2.0.13 - 13th April, 2020 =
+
+* Filtered: `woocommerce_stock_amount` to validate as a float value.
+* Changed: Quantity value type from _integer_ to _float_ to allow quantity to be used for weighing fruit for example when adding or updating a product.
+* Dev: Added filter for sold individual products quantity to be overridden. - `cocart_add_to_cart_sold_individually_quantity`
+
+> This is a community release by [@metemaddar](https://github.com/metemaddar)
+
 = v2.0.12 - 27th March, 2020 =
 
 * Tested: Compatible with WordPress 5.4
@@ -285,6 +293,6 @@ If you get stuck, you can ask for help in the [CoCart support forum](https://wor
 
 == Upgrade Notice ==
 
-= 2.0.12 =
+= 2.0.13 =
 
 Please temporarily deactivate CoCart and CoCart Pro (if you have it) before updating WooCommerce to version 4.0+ as there is an activation order issue I am still working on fixing. Once you have upgraded WooCommerce simply reactivate CoCart.

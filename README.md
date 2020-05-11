@@ -6,7 +6,7 @@ Env Variables are in `/backend/sample.env` and are referenced in `/backend/docke
 
 - Rename `sample.env` to `.env`
 - Sample creds will work
-- Install [Yarn](https://classic.yarnpkg.com/en/docs/install/# mac-stable) and [Docker](https://docs.docker.com/install/)
+- Install [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable) and [Docker](https://docs.docker.com/install/)
 - In project root, run `yarn`
 
 ##### _Retrieve demo data from 01 Test DB_
@@ -62,7 +62,7 @@ _Add products to store_
 ### Cocart (Currently using free version)
 _Extends WooCommerce API to access Cart info_
 
-[Cocart Documentation](https://docs.cocart.xyz/index.html# introduction)
+[Cocart Documentation](https://docs.cocart.xyz/index.html#introduction)
 
 ### WooCommerce Subscription plugin
 [Official Plugin Page](https://woocommerce.com/products/woocommerce-subscriptions/)

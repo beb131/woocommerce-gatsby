@@ -8,7 +8,7 @@
  * @category API
  * @package  CoCart/API
  * @since    2.0.0
- * @version  2.0.10
+ * @version  2.0.13
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -57,7 +57,7 @@ class CoCart_API_Controller {
 				'quantity' => array(
 					'description'       => __( 'The quantity amount of the item to add to cart.', 'cart-rest-api-for-woocommerce' ),
 					'default'           => 1,
-					'type'              => 'integer',
+					'type'              => 'float',
 					'validate_callback' => function( $param, $request, $key ) {
 						return is_numeric( $param );
 					}
@@ -177,7 +177,7 @@ class CoCart_API_Controller {
 				'args'     => array(
 					'quantity' => array(
 						'default'           => 1,
-						'type'              => 'integer',
+						'type'              => 'float',
 						'validate_callback' => function( $param, $request, $key ) {
 							return is_numeric( $param );
 						}
@@ -519,7 +519,7 @@ class CoCart_API_Controller {
 	 */
 	public function add_to_cart( $data = array() ) {
 		$product_id     = ! isset( $data['product_id'] ) ? 0 : absint( $data['product_id'] );
-		$quantity       = ! isset( $data['quantity'] ) ? 1 : absint( $data['quantity'] );
+		$quantity       = ! isset( $data['quantity'] ) ? 1 : floatval( $data['quantity'] );
 		$variation_id   = ! isset( $data['variation_id'] ) ? 0 : absint( $data['variation_id'] );
 		$variation      = ! isset( $data['variation'] ) ? array() : $data['variation'];
 		$cart_item_data = ! isset( $data['cart_item_data'] ) ? array() : $data['cart_item_data'];
@@ -548,7 +548,12 @@ class CoCart_API_Controller {
 
 		// Force quantity to 1 if sold individually and check for existing item in cart.
 		if ( $product_data->is_sold_individually() ) {
-			$quantity = 1;
+			/**
+			 * Quantity for sold individual products can be filtered.
+			 *
+			 * @since 2.0.13
+			 */
+			$quantity = apply_filters( 'cocart_add_to_cart_sold_individually_quantity', 1 );
 
 			$cart_contents = $this->get_cart();
 
@@ -739,7 +744,7 @@ class CoCart_API_Controller {
 	 */
 	public function update_item( $data = array() ) {
 		$cart_item_key = ! isset( $data['cart_item_key'] ) ? '0' : wc_clean( $data['cart_item_key'] );
-		$quantity      = ! isset( $data['quantity'] ) ? 1 : absint( $data['quantity'] );
+		$quantity      = ! isset( $data['quantity'] ) ? 1 : floatval( $data['quantity'] );
 
 		// Allows removing of items if quantity is zero should for example the item was with a product bundle.
 		if ( $quantity === 0 ) {
@@ -777,8 +782,6 @@ class CoCart_API_Controller {
 
 					return new WP_REST_Response( $cart_contents, 200 );
 				}
-
-				$response = array();
 
 				// Return response based on product quantity increment.
 				if ( $quantity > $current_data['quantity'] ) {

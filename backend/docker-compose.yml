@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 
 services:
   wp:
@@ -6,7 +6,14 @@ services:
     ports:
       - "3030:80" # change ip if required
     volumes:
-      - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
+      # - ./apache2:/etc/apache2
+      # - ./apache2/sites-enabled:/etc/apache2/sites-enabled
+      # - type: bind
+      #   source: ./apache2/apache2.conf
+      #   target: /etc/apache2/apache2.conf
+      # - type: bind
+      #   source: ./apache2/sites-enabled/000-default.conf
+      #   target: /etc/apache2/sites-enabled/000-default.conf
       - ./wordpress:/var/www/html # Full wordpress project
       - ./wp-plugins/cart-rest-api-for-woocommerce:/var/www/html/wp-content/plugins/cart-rest-api-for-woocommerce # Cocart plugin
       - ./wp-plugins/jwt-authentication-for-wp-rest-api:/var/www/html/wp-content/plugins/jwt-authentication-for-wp-rest-api # JWT plugin
