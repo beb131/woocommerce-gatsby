@@ -30,12 +30,8 @@ module.exports = {
         // true if using https. otherwise false.
         https: false,
         api_keys: {
-          // XAMPP
-          // consumer_key: "ck_9710593175ef98f5883547bab6c802905ed3c747",
-          // consumer_secret: "cs_f944ce02e57643f98db79337461a494c6efd5072",
-          // Local Docker
-          consumer_key: "ck_63d40b2b4717c19b30d59787834fb90849f547cb",
-          consumer_secret: "cs_2544d8969ddffe736ec8a4dc56f964c24349c370",
+          consumer_key: "",
+          consumer_secret: "",
         },
         // Array of strings with fields you'd like to create nodes for...
         fields: ["products", "products/categories", "products/attributes"],
