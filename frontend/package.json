@@ -6,7 +6,7 @@
     "@pasdo501/gatsby-source-woocommerce": "^0.14.0",
     "@woocommerce/woocommerce-rest-api": "^1.0.1",
     "@wordpress/components": "^9.2.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "bulma": "^0.8.0",
     "gatsby": "^2.13.73",
